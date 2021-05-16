@@ -1,5 +1,6 @@
 <template>
   <div class="nav-bar">
+    <!-- 导航栏预留三个插槽（左中右）以便所有项目使用 -->
     <div class="left"><slot name="left"></slot></div>
     <div class="center"><slot name="center"></slot></div>
     <div class="right"><slot name="right"></slot></div>
@@ -12,7 +13,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .nav-bar {
     display: flex;
 
