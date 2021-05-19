@@ -43,6 +43,14 @@ export default {
     observeImage: {
       type: Boolean,
       default: false
+    },
+    imgDebounceTime: {
+      type: Number,
+      default: -2
+    },
+    click: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -53,13 +61,26 @@ export default {
   },
 
   mounted(){
-    this.scroll = new BScroll(this.$refs.wrapper, {
-      click: true,
-      observeDOM: this.observeDOM,
-      probeType: this.probeType,
-      pullUpLoad: this.pullUpLoad,
-      observeImage: this.observeImage,
-    })
+    if(this.debounceTime != -1){
+      this.scroll = new BScroll(this.$refs.wrapper, {
+        click: this.click,
+        observeDOM: this.observeDOM,
+        probeType: this.probeType,
+        pullUpLoad: this.pullUpLoad,
+        observeImage: {
+          debounceTime: 0
+        },
+      })
+    }
+    else {
+      this.scroll = new BScroll(this.$refs.wrapper, {
+        click: this.click,
+        observeDOM: this.observeDOM,
+        probeType: this.probeType,
+        pullUpLoad: this.pullUpLoad,
+        observeImage: this.observeImage
+      })
+    }
 
     // 监听滚动位置，判断是否显示backTop按钮
     if(this.probeType != 0){

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function request(config){
   const instance = axios.create({
-    baseURL: 'xxx', //测试用
+    baseURL: 'xxx',
     timeout: 5000
   })
 

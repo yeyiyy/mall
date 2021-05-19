@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>购物车</h2>
+    <h2>shopcart</h2>
+    <br><br>
+    <h3>cart部分尚未完成</h3>
   </div>
 </template>
 

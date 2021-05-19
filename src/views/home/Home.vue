@@ -16,8 +16,9 @@
     </tab-control>
 
     <!-- 利用封装的scroll插件实现滚动效果 -->
-    <scroll class="wrapper"
+    <scroll class="homeScroll"
         ref="scroll"
+        :click="true"
         :observeDOM="true"
         :observeImage="true"
         :probeType="3"
@@ -100,6 +101,7 @@ export default {
   computed: {
     // 用于获取首页当前商品信息
     currentGoods(){
+
       return this.goods[this.currentType].list
     }
   },
@@ -239,11 +241,11 @@ export default {
     z-index: 9;
   }
 
-  /* .wrapper {
+  /* .homeScoll {
     height: calc(100% - 49px);
     overflow: hidden;
   } */
-  .wrapper {
+  .homeScroll {
     position: absolute;
     overflow: hidden;
     top: 44px;
