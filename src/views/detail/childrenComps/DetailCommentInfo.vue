@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="comment-info" style="color: red;" v-else>暂无用户评论</div>
+    <div class="comment-info no-comment" style="color: red;" v-else>暂无用户评论</div>
   </div>
 </template>
 
@@ -131,4 +131,5 @@ export default {
     height: 70px;
     margin-right: 5px;
   }
+
 </style>

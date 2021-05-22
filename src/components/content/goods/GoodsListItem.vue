@@ -6,7 +6,7 @@
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
       <span class="collect">
-        <img src="~assets/img/common/collect.svg" alt="" @load="imgLoad">
+        <img src="~assets/img/common/collect.svg" alt="">
         {{goodsItem.cfav}}
       </span>
     </div>
@@ -46,9 +46,6 @@ export default {
     itemClick(){
       this.iid = this.goodsItem.iid
       this.$router.push('/detail/' + this.iid)
-    },
-    imgLoad(){
-      this.$store.commit('imgLoad')
     },
   },
   created(){

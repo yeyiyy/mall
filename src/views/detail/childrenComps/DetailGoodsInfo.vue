@@ -16,6 +16,7 @@
           :src="image"
           alt=""
           v-for="(image, imageIndex) in item.list"
+          @load="imgLoad"
         />
       </div>
     </div>
@@ -25,6 +26,13 @@
 <script>
   export default {
     name: 'DetailGoodsInfo',
+    data(){
+      return {
+        count: 0,
+        imgLength: 0
+      }
+    },
+
     props: {
       detailGoodsInfo: {
         type: Object,
@@ -34,7 +42,16 @@
       }
     },
     methods: {
-
+      imgLoad(){
+        if(++this.count == this.imgLength){
+          this.$emit('detailImageLoadEnd')
+        }
+      },
+    },
+    watch: {
+      detailGoodsInfo() {
+        this.imgLength = this.detailGoodsInfo.detailImage[0].list.length;
+      }
     }
   }
 </script>

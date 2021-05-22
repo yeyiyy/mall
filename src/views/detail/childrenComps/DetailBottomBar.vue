@@ -39,7 +39,6 @@ export default {
     },
     collectClick(){
       this.isCollected = !this.isCollected
-      console.log(this.isCollected);
     }
   },
 

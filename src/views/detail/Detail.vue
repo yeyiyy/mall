@@ -10,7 +10,7 @@
             :click="true"
             :observeDOM="true"
             :probeType= 3
-            @scroll="navBarChange"
+            @scroll="handleScroll"
             :imgDebounceTime="100">
       <!-- 详情页轮播图 -->
       <detail-swiper :topImages="topImages"></detail-swiper>
@@ -22,7 +22,7 @@
       <detail-shop-info :shopInfo="shopInfo"></detail-shop-info>
 
       <!-- 商品详细信息 -->
-      <detail-goods-info :detailGoodsInfo="detailGoodsInfo"></detail-goods-info>
+      <detail-goods-info :detailGoodsInfo="detailGoodsInfo" @detailImageLoadEnd="detailImageLoadEnd"></detail-goods-info>
 
       <!-- 商品参数信息 -->
       <detail-params-info :rule="goodsRule" :info="goodsInfo" ref="params"></detail-params-info>
@@ -40,6 +40,9 @@
       </div>
     </scroll>
 
+    <!-- 返回顶部按钮 -->
+    <back-top @click.native="backTopClick" v-show="isShowBackTop"></back-top>
+
     <detail-bottom-bar></detail-bottom-bar>
   </div>
 </template>
@@ -55,9 +58,11 @@ import DetailParamsInfo from './childrenComps/DetailParamsInfo';
 import DetailCommentInfo from './childrenComps/DetailCommentInfo';
 import DetailBottomBar from './childrenComps/DetailBottomBar';
 
-// 导入公共组件
+// 导入公共common组件
 import Scroll from 'components/common/scroll/Scroll';
 
+// 导入业务content组件
+import BackTop from 'components/content/backTop/BackTop';
 import GoodsList from 'components/content/goods/GoodsList';
 
 // 导入网络请求
@@ -79,7 +84,8 @@ export default {
     DetailParamsInfo,
     DetailCommentInfo,
     GoodsList,
-    DetailBottomBar
+    DetailBottomBar,
+    BackTop,
   },
   data(){
     return {
@@ -94,26 +100,27 @@ export default {
       goodsRecommend: [],
       themeOffsetTop: [],
       scrollCurrentIndex: 0,
+      isShowBackTop: false
     }
   },
 
   methods: {
-    getThemeOffsetTop(){
-      setTimeout(() => {
-        this.themeOffsetTop.push(44)
-        this.themeOffsetTop.push(this.$refs.params.$el.offsetTop - 44)
-        this.themeOffsetTop.push(this.$refs.comment.$el.offsetTop - 44)
-        this.themeOffsetTop.push(this.$refs.recommend.offsetTop - 44)
-      }, 500);
+    detailImageLoadEnd(){
+      this.$refs.detailScroll.scroll.refresh();
+      this.themeOffsetTop.push(0)
+      this.themeOffsetTop.push(this.$refs.params.$el.offsetTop - 44)
+      this.themeOffsetTop.push(this.$refs.comment.$el.offsetTop - 44)
+      this.themeOffsetTop.push(this.$refs.recommend.offsetTop - 44)
     },
 
     navBarClick(index){
       this.$refs.detailScroll.scrollTo(0, -this.themeOffsetTop[index], 100)
     },
 
-    navBarChange(position){
+    handleScroll(position){
       let y = position.y - 44
       const length = this.themeOffsetTop.length
+      // 处理详情页顶部导航栏与页面滚动的位置的关系
       for(let i = 0 ; i < length ; i++){
         if(this.detailCurrentIndex !== i && ((i < length - 1 && y <= -this.themeOffsetTop[i] && y > -this.themeOffsetTop[i+1]) ||
         (i === length - 1 && y < -this.themeOffsetTop[i])))
@@ -121,6 +128,15 @@ export default {
           this.scrollCurrentIndex = i
         }
       }
+
+      // 返回顶部按钮的展示
+      this.isShowBackTop = (-position.y) > 1000
+    },
+
+    // 返回顶部按钮点击事件
+    backTopClick(){
+      this.$refs.detailScroll.scrollTo(0, 0, 500)
+    },
 
       // if(y > -this.themeOffsetTop[1] && y <= -this.themeOffsetTop[0]){
       //   this.$refs.currentIndex = '0'
@@ -138,7 +154,6 @@ export default {
       //   this.$refs.currentIndex = '3'
       //   console.log(this.$refs.currentIndex);
       // }
-    }
   },
 
   created(){
@@ -176,7 +191,8 @@ export default {
     })
 
     // this.$refs.detailScroll.scroll.refresh();
-    this.getThemeOffsetTop();
+
+
   },
   mounted(){
   }
