@@ -73,32 +73,32 @@ export default {
 
 <style scoped>
   .shop-info {
-    padding: 25px 8px;
-    border-bottom: 5px solid #f2f5f8;
+    padding: 1.5625rem .5rem;
+    border-bottom: .3125rem solid #f2f5f8;
   }
 
   .shop-top {
-    line-height: 45px;
+    line-height: 2.8125rem;
     display: flex;
     align-items: center;
   }
 
   .shop-top img {
-    width: 45px;
-    height: 45px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 2.8125rem;
+    height: 2.8125rem;
+    border: .0625rem solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
   }
 
   .shop-top .title {
-    margin-left: 10px;
+    margin-left: .625rem;
     vertical-align: center;
   }
 
   .shop-middle {
     display: flex;
     align-items: center;
-    margin-top: 15px;
+    margin-top: .9375rem;
   }
 
   .shop-middle-item {
@@ -114,35 +114,35 @@ export default {
 
   .shop-info-sells,
   .shop-info-goods {
-    margin-top: -25px;
-    height: 20px;
-    line-height: 20px;
+    margin-top: -1.5625rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
   }
 
   .sells-count,
   .goods-count {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .sells-text,
   .goods-text {
-    font-size: 12px;
-    margin-top: 10px;
+    font-size: .75rem;
+    margin-top: .625rem;
   }
 
   .shop-middle-right {
-    font-size: 13px;
+    font-size: .8125rem;
     color: #333333;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: .0625rem solid rgba(0, 0, 0, 0.1);
   }
 
   .shop-middle-right table {
-    width: 120px;
-    margin-left: 30px;
+    width: 7.5rem;
+    margin-left: 1.875rem;
   }
 
   .shop-middle-right table td {
-    padding: 5px 0;
+    padding: .3125rem 0;
   }
 
   .shop-middle-right .score {
@@ -154,8 +154,8 @@ export default {
   }
 
   .shop-middle-right .better span {
-    padding: 3px;
-    margin-left: 5px;
+    padding: .1875rem;
+    margin-left: .3125rem;
     text-align: center;
     color: #ffffff;
     background-color: #5ea732;
@@ -166,19 +166,19 @@ export default {
   }
 
   .shop-bottom {
-    margin-top: 10px;
+    margin-top: .625rem;
     width: 100%;
     text-align: center;
   }
 
   .enter-shop {
-    font-size: 14px;
+    font-size: .875rem;
     margin: auto;
-    height: 30px;
-    line-height: 30px;
-    width: 150px;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    width: 9.375rem;
     text-align: center;
-    border-radius: 10px;
+    border-radius: .625rem;
     background-color: #f2f5f8;
   }
 </style>

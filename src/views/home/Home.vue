@@ -158,6 +158,7 @@ export default {
       }
       this.$refs.tabControlShow.currentIndex = index
       this.$refs.tabControlFixed.currentIndex = index
+      this.$refs.scroll.scrollTo(0, -this.tabOffsetTop, 0)
     },
 
     // 返回顶部按钮点击事件
@@ -207,8 +208,8 @@ export default {
 
 <style scoped>
   #home {
-    /* 首部导航栏脱离文档流后，使首页部分下移44px（首部导航栏的高度），从而使页面完全展示 */
-    /* padding-top: 44px; */
+    /* 首部导航栏脱离文档流后，使首页部分下移2.75rem（首部导航栏的高度），从而使页面完全展示 */
+    /* padding-top: 2.75rem; */
     height: 100vh;
   }
 
@@ -219,9 +220,9 @@ export default {
     /* 导航栏不能滚动 */
     /* 在使用浏览器原生滚动时的设置，在引用了better-scroll后设置了滚动区域（不包含顶部导航栏，所以其不会滚动，不再需要设置fixed） */
     /* position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px; */
+    top: 0rem;
+    left: 0rem;
+    right: 0rem; */
 
     /* 层叠顺序 */
     z-index: 9;
@@ -232,7 +233,7 @@ export default {
       在引入了BScroll插件后粘性定位不可用
   .tab-control {
     position: sticky;
-    top: 44px;
+    top: 2.75rem;
     z-index: 9;
   } */
 
@@ -242,14 +243,14 @@ export default {
   }
 
   /* .homeScoll {
-    height: calc(100% - 49px);
+    height: calc(100% - 3.0625rem);
     overflow: hidden;
   } */
   .homeScroll {
     position: absolute;
     overflow: hidden;
-    top: 44px;
-    bottom: 49px;
+    top: 2.75rem;
+    bottom: 3.0625rem;
     left: 0;
     right: 0;
   }

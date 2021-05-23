@@ -63,19 +63,19 @@
 
 <style scoped>
   .goods-info {
-    padding: 20px 0;
-    border-bottom: 5px solid #f2f5f8;
+    padding: 1.25rem 0;
+    border-bottom: .3125rem solid #f2f5f8;
   }
 
   .info-desc {
-    padding: 0 15px;
+    padding: 0 .9375rem;
   }
 
   .info-desc .start,
   .info-desc .end {
     position: relative;
-    width: 90px;
-    height: 1px;
+    width: 5.625rem;
+    height: .0625rem;
     background-color: #a3a3a5;
   }
 
@@ -91,8 +91,8 @@
   .info-desc .end::after {
     position: absolute;
     bottom: 0;
-    width: 5px;
-    height: 5px;
+    width: .3125rem;
+    height: .3125rem;
     content: "";
     background-color: #333333;
   }
@@ -102,19 +102,19 @@
   }
 
   .info-desc .desc {
-    font-size: 14px;
-    padding: 20px 0;
+    font-size: .875rem;
+    padding: 1.25rem 0;
   }
 
   .info-key {
-    font-size: 16px;
-    margin: 10px 0 10px 15px;
+    font-size: 1rem;
+    margin: .625rem 0 .625rem .9375rem;
     color: #333333;
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
   .info-key img {
-    height: 25px;
-    margin-bottom: -7px;
+    height: 1.5625rem;
+    margin-bottom: -0.4375rem;
   }
 
   .info-list img {

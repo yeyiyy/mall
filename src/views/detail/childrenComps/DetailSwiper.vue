@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
   .DetailSwiper {
-    height: 300px;
+    height: 18.75rem;
     overflow: hidden;
   }
 </style>

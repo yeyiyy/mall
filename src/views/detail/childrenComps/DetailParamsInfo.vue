@@ -67,23 +67,23 @@ export default {
 
 <style scoped>
   .detail-params {
-    font-size: 14px;
-    padding: 20px 15px;
-    border-bottom: 5px solid #f2f5f8;
+    font-size: .875rem;
+    padding: 1.25rem .9375rem;
+    border-bottom: .3125rem solid #f2f5f8;
   }
 
   .info-key,
   .rule-key {
-    font-size: 16px;
-    margin: 10px 0 10px 15px;
+    font-size: 1rem;
+    margin: .625rem 0 .625rem .9375rem;
     color: #333333;
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
   .rule-key img,
   .info-key img {
-    height: 22px;
-    margin-bottom: -6px;
-    margin-left: -20px;
+    height: 1.375rem;
+    margin-bottom: -0.375rem;
+    margin-left: -1.25rem;
   }
 
   .detail-params table {
@@ -91,16 +91,16 @@ export default {
     border-collapse: collapse;
   }
   .detail-params table tr {
-    height: 42px;
+    height: 2.625rem;
   }
   .detail-params table tr td {
-    border-bottom: 1px solid rgba(100, 100, 100, 0.1);
+    border-bottom: .0625rem solid rgba(100, 100, 100, 0.1);
   }
 
   .rule-tips {
-    margin-top: 5px;
-    margin-bottom: 30px;
-    font-size: 12px;
+    margin-top: .3125rem;
+    margin-bottom: 1.875rem;
+    font-size: .75rem;
   }
   .rule-item{
     width: 25%;
@@ -109,10 +109,10 @@ export default {
 
   .info-item-key {
     /*当value的数据量比较大的时候, 会挤到key,所以给一个固定的宽度*/
-    width: 95px;
+    width: 5.9375rem;
   }
   .info-table {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: .0625rem solid rgba(0, 0, 0, 0.1);
   }
   .info-item-value {
     color: #eb4868;

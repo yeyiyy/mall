@@ -50,48 +50,48 @@ export default {
   display: flex;
   position: fixed;
   background-color: #fff;
-  bottom: 0px;
+  bottom: 0rem;
   left: 0;
   right: 0;
-  height: 49px;
+  height: 3.0625rem;
   text-align: center;
 }
 .bottom_left {
-  font-size: 12px;
+  font-size: .75rem;
   display: flex;
   flex: 1;
 }
 .bottom_left > div {
   flex: 1;
-  border-right: 1px solid rgba(128, 128, 128, 0.2);
+  border-right: .0625rem solid rgba(128, 128, 128, 0.2);
 }
 .bottom_left .icon {
   display: block;
   background: url("~assets/img/detail/detail_bottom.png") 0 0/100%;
-  width: 20px;
-  height: 20px;
-  margin: 5px auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: .3125rem auto;
 }
 .collect .icon {
-  background-position: 0 2px;
+  background-position: 0 .125rem;
 }
 .collect .collected {
-  background-position: 0 -23px;
+  background-position: 0 -1.4375rem;
 }
 .service .icon {
-  background-position: 0 -48px;
+  background-position: 0 -3rem;
 }
 .shop .icon {
-  background-position: 0 -88px;
+  background-position: 0 -5.5rem;
 }
 .bottom_right {
-  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   flex: 1;
 }
 .bottom_right > div {
   flex: 1;
-  line-height: 49px;
+  line-height: 3.0625rem;
 }
 .cart {
   background-color: rgb(255, 174, 0);

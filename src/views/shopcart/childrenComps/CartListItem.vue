@@ -54,31 +54,31 @@ export default {
 <style scoped>
   .cart-list-item {
     width: 100%;
-    height: 200px;
-    border-bottom: 8px solid rgba(100, 100, 100, 0.1);
+    height: 12.5rem;
+    border-bottom: .5rem solid rgba(100, 100, 100, 0.1);
     display: flex;
-    padding: 0px 10px 10px 0px;
+    padding: 0rem .625rem .625rem 0rem;
   }
 
   .check-button {
-    margin: 0 10px;
+    margin: 0 .625rem;
   }
 
   .item-img {
     width: 40%;
     height: 80%;
-    margin-top: 25px;
+    margin-top: 1.5625rem;
   }
   .item-img img {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: .625rem;
   }
   .item-info {
-    margin-top: 25px;
+    margin-top: 1.5625rem;
     position: relative;
     width: 50%;
-    margin-left: 10px;
+    margin-left: .625rem;
   }
   .item-info p {
     display: inline-block;
@@ -88,24 +88,24 @@ export default {
     overflow: hidden;
   }
   .item-title {
-    font-size: 16px;
-    padding-bottom: 8px;
+    font-size: 1rem;
+    padding-bottom: .5rem;
   }
   .item-desc {
-    font-size: 14px;
+    font-size: .875rem;
     color: gray;
   }
   .item-price {
     position: absolute;
     left: 0;
-    bottom: 10px;
-    font-size: 18px;
+    bottom: .625rem;
+    font-size: 1.125rem;
     color: orangered;
   }
   .item-count {
     position: absolute;
-    right: 10px;
-    bottom: 12px;
-    font-size: 14px;
+    right: .625rem;
+    bottom: .75rem;
+    font-size: .875rem;
   }
 </style>

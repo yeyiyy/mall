@@ -51,15 +51,15 @@ export default {
 <style scoped>
   .tab-bar-item {
     flex: 1;
-    height: 49px;
+    height: 3.0625rem;
     text-align: center;
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .tab-bar-item img{
-    width: 24px;
-    height: 24px;
-    margin-top: 3px;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: .1875rem;
     vertical-align: middle;
   }
 </style>

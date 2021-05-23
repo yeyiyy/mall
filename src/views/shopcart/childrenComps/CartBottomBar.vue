@@ -11,7 +11,7 @@
       合计：￥{{totalPrice}}
     </div>
 
-    <div class="cart-check-out">
+    <div class="cart-check-out" @click="checkOutToast">
       去结算({{cartLength}})
     </div>
   </div>
@@ -45,6 +45,15 @@ export default {
         return preValue += item.count
       }, 0)
     },
+    checkedlength(){
+      let count = 0
+      this.cartList.filter(item => {
+        if(item.checked){
+          count++
+        }
+      })
+      return count
+    },
 
     isCheckedAll(){
       if(this.cartList.length == 0) {
@@ -77,6 +86,12 @@ export default {
           }
         })
       }
+    },
+    checkOutToast(){
+      if(this.checkedlength == 0){
+        this.$toast.show('请选择商品后购买', 1500)
+      }
+
     }
   }
 }
@@ -85,10 +100,10 @@ export default {
 <style scoped>
   .cart-bottom-bar {
     position: absolute;
-    bottom: 49px;
-    height: 40px;
+    bottom: 3.0625rem;
+    height: 2.5rem;
     width: 100%;
-    border: 1px solid rgba(128, 128, 128, 0.1);
+    border: .0625rem solid rgba(128, 128, 128, 0.1);
     background-color: #fff;
 
     display: flex;
@@ -96,30 +111,30 @@ export default {
 
   .check-button-main {
     display: flex;
-    height: 40px;
-    line-height: 40px;
+    height: 2.5rem;
+    line-height: 2.5rem;
   }
   .check-button {
-    margin: auto 10px;
-    height: 10px;
-    width: 10px;
+    margin: auto .625rem;
+    height: .625rem;
+    width: .625rem;
   }
   .check-button-text {
     display: inline-block;
-    font-size: 14px;
-    margin-left: 10px;
+    font-size: .875rem;
+    margin-left: .625rem;
   }
 
   .cart-total-price {
-    margin: auto 10px
+    margin: auto .625rem
   }
 
   .cart-check-out {
-    width: 100px;
-    height: 32px;
-    line-height: 32px;
+    width: 6.25rem;
+    height: 2rem;
+    line-height: 2rem;
     text-align: center;
-    font-size: 14px;
+    font-size: .875rem;
 
     background-color: red;
     color: #fff;

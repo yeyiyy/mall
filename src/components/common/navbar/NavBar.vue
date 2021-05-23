@@ -17,15 +17,15 @@ export default {
   .nav-bar {
     display: flex;
 
-    height: 44px;
-    line-height: 44px;
+    height: 2.75rem;
+    line-height: 2.75rem;
     text-align: center;
 
-    box-shadow: 0 1px 1px rgba(100,100,100,.1);
+    box-shadow: 0 .0625rem .0625rem rgba(100,100,100,.1);
   }
 
   .left {
-    width: 60px;
+    width: 3.75rem;
   }
 
   .center {
@@ -33,7 +33,7 @@ export default {
   }
 
   .right {
-    width: 60px;
+    width: 3.75rem;
   }
 
 

@@ -63,7 +63,7 @@ export default {
 <style scoped>
   .itemTitle {
     display: flex;
-    font-size: 13px;
+    font-size: .8125rem;
   }
 
   .itemDetail {
@@ -75,6 +75,6 @@ export default {
   }
 
   .back img {
-    margin-top: 10px;
+    margin-top: .625rem;
   }
 </style>

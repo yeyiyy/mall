@@ -47,7 +47,8 @@
     <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
 
     <!-- 加入购物车提示 -->
-    <toast :message="addToCartMessage" :show="addToCartMessageShow"></toast>
+    <!-- 将其封装成了一个插件，所以不需要在这里再次调用 -->
+    <!-- <toast :message="addToCartMessage" :show="addToCartMessageShow"></toast> -->
   </div>
 </template>
 
@@ -64,7 +65,7 @@ import DetailBottomBar from './childrenComps/DetailBottomBar';
 
 // 导入公共common组件
 import Scroll from 'components/common/scroll/Scroll';
-import Toast from 'components/common/toast/Toast';
+import toast from 'components/common/toast';
 
 // 导入业务content组件
 import BackTop from 'components/content/backTop/BackTop';
@@ -91,7 +92,6 @@ export default {
     GoodsList,
     DetailBottomBar,
     BackTop,
-    Toast
   },
   data(){
     return {
@@ -107,8 +107,6 @@ export default {
       themeOffsetTop: [],
       scrollCurrentIndex: 0,
       isShowBackTop: false,
-      addToCartMessage: '',
-      addToCartMessageShow: false
     }
   },
 
@@ -173,13 +171,7 @@ export default {
         product.iid = this.iid
         // 异步操作执行actions，且判断添加购物车是否成功
         this.$store.dispatch('addToCart', product).then(res => {
-          this.addToCartMessage = res
-          this.addToCartMessageShow = true
-
-          setTimeout(() => {
-            this.addToCartMessageShow = false
-            this.addToCartMessage = ''
-          }, 1500);
+          this.$toast.show(res, 1000)
         })
       }
   },
@@ -245,21 +237,21 @@ export default {
   }
 
   .detail-scroll {
-    height: calc(100% - 44px - 49px);
+    height: calc(100% - 2.75rem - 3.0625rem);
   }
 
   .goods-recommend {
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
   .goods-recommend-title {
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-    margin-left: 10px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    margin-left: .625rem;
   }
   .goods-recommend-title img {
-    height: 18px;
-    margin-bottom: -3px;
-    margin-right: 3px;
+    height: 1.125rem;
+    margin-bottom: -0.1875rem;
+    margin-right: .1875rem;
   }
 </style>

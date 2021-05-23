@@ -45,6 +45,6 @@ export default {
     overflow: hidden;
   }
   .wrapper {
-    height: calc(100% - 49px - 44px - 40px);
+    height: calc(100% - 3.0625rem - 2.75rem - 2.5rem);
   }
 </style>

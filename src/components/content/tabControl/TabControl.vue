@@ -40,9 +40,9 @@ export default {
   .tab-control {
     display: flex;
     text-align: center;
-    height: 40px;
-    line-height: 40px;
-    font-size: 15px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: .9375rem;
 
     background-color: #fff;
   }
@@ -52,7 +52,7 @@ export default {
   }
 
   .tab-control-item span {
-    padding: 3px;
+    padding: .1875rem;
   }
 
   .isActive {
@@ -60,6 +60,6 @@ export default {
   }
 
   .isActive span {
-    border-bottom: 1px solid var(--color-tint);
+    border-bottom: .0625rem solid var(--color-tint);
   }
 </style>

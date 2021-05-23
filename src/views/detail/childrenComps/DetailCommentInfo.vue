@@ -63,73 +63,73 @@ export default {
 
 <style scoped>
   .comment-info {
-    padding: 5px 12px;
+    padding: .3125rem .75rem;
     color: #333333;
-    border-bottom: 5px solid #f2f5f8;
+    border-bottom: .3125rem solid #f2f5f8;
   }
 
   .comment-info-header {
-    line-height: 50px;
-    height: 50px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 3.125rem;
+    height: 3.125rem;
+    border-bottom: .0625rem solid rgba(0, 0, 0, 0.1);
   }
 
   .comment-title {
-    font-size: 15px;
+    font-size: .9375rem;
     float: left;
   }
 
   .comment-more {
-    font-size: 13px;
+    font-size: .8125rem;
     float: right;
-    margin-right: 10px;
+    margin-right: .625rem;
   }
 
   .user-info {
-    padding: 10px 0 5px;
+    padding: .625rem 0 .3125rem;
   }
 
   .user-info img {
-    width: 42px;
-    height: 42px;
+    width: 2.625rem;
+    height: 2.625rem;
     border-radius: 50%;
   }
 
   .user-info-name {
-    font-size: 15px;
+    font-size: .9375rem;
     position: relative;
-    top: -15px;
-    margin-left: 10px;
+    top: -0.9375rem;
+    margin-left: .625rem;
   }
 
   .user-comment-info-time {
     float: right;
-    font-size: 10px;
-    margin-top: 15px;
+    font-size: .625rem;
+    margin-top: .9375rem;
     color: #999999;
   }
 
   .user-comment-text {
-    padding: 3px 5px 5px;
-    font-size: 14px;
+    padding: .1875rem .3125rem .3125rem;
+    font-size: .875rem;
     line-height: 1.5;
     color: #777777;
   }
 
   .user-comment-info {
-    font-size: 10px;
-    margin-top: 5px;
+    font-size: .625rem;
+    margin-top: .3125rem;
     color: #999999;
   }
 
   .user-comment-img {
-    margin-top: 10px;
+    margin-top: .625rem;
   }
 
   .user-comment-img img {
-    width: 70px;
-    height: 70px;
-    margin-right: 5px;
+    width: 4.375rem;
+    height: 4.375rem;
+    margin-right: .3125rem;
   }
 
 </style>
