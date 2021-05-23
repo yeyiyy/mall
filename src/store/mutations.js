@@ -3,7 +3,6 @@ import Vue from 'vue';
 // import {
 //   INCREMENT
 // } from './mutations-type';
-import utils, { debounce } from '../common/utils';
 
 export default {
   // [INCREMENT](state){
@@ -26,7 +25,20 @@ export default {
   //   Vue.delete(state.info, 'money')
   // },
 
-  imgLoad(state){
-    state.imgLoadEnd = true
+  // 商品已在购物车中，购物车内商品数量+1
+  addCount(state, payload){
+    payload.count += 1
+  },
+
+  // 将商品加入购物车
+  addToCart(state, payload){
+    payload.count = 1
+    payload.checked = true
+    state.cartList.push(payload)
+  },
+
+  // 更改商品checked状态
+  checkedChange(state, payload){
+    payload.checked = !payload.checked
   }
 }

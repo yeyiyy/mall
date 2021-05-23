@@ -43,7 +43,11 @@
     <!-- 返回顶部按钮 -->
     <back-top @click.native="backTopClick" v-show="isShowBackTop"></back-top>
 
-    <detail-bottom-bar></detail-bottom-bar>
+    <!-- 底部导航栏 -->
+    <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
+
+    <!-- 加入购物车提示 -->
+    <toast :message="addToCartMessage" :show="addToCartMessageShow"></toast>
   </div>
 </template>
 
@@ -60,6 +64,7 @@ import DetailBottomBar from './childrenComps/DetailBottomBar';
 
 // 导入公共common组件
 import Scroll from 'components/common/scroll/Scroll';
+import Toast from 'components/common/toast/Toast';
 
 // 导入业务content组件
 import BackTop from 'components/content/backTop/BackTop';
@@ -86,6 +91,7 @@ export default {
     GoodsList,
     DetailBottomBar,
     BackTop,
+    Toast
   },
   data(){
     return {
@@ -100,7 +106,9 @@ export default {
       goodsRecommend: [],
       themeOffsetTop: [],
       scrollCurrentIndex: 0,
-      isShowBackTop: false
+      isShowBackTop: false,
+      addToCartMessage: '',
+      addToCartMessageShow: false
     }
   },
 
@@ -154,6 +162,26 @@ export default {
       //   this.$refs.currentIndex = '3'
       //   console.log(this.$refs.currentIndex);
       // }
+
+      // 加入购物车事件
+      addToCart(){
+        const product = {}
+        product.image = this.topImages[0]
+        product.title = this.goods.title
+        product.desc = this.goods.desc
+        product.price = this.goods.realPrice
+        product.iid = this.iid
+        // 异步操作执行actions，且判断添加购物车是否成功
+        this.$store.dispatch('addToCart', product).then(res => {
+          this.addToCartMessage = res
+          this.addToCartMessageShow = true
+
+          setTimeout(() => {
+            this.addToCartMessageShow = false
+            this.addToCartMessage = ''
+          }, 1500);
+        })
+      }
   },
 
   created(){
@@ -207,6 +235,7 @@ export default {
     height: 100vh;
     z-index: 9;
     background-color: #fff;
+    overflow: hidden;
   }
 
   .detail-nav-bar {

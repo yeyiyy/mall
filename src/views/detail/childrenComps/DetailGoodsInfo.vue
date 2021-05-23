@@ -50,7 +50,12 @@
     },
     watch: {
       detailGoodsInfo() {
-        this.imgLength = this.detailGoodsInfo.detailImage[0].list.length;
+        if(this.detailGoodsInfo.detailImage[1] != undefined){
+          this.imgLength = this.detailGoodsInfo.detailImage[0].list.length + this.detailGoodsInfo.detailImage[1].list.length;
+        }
+        else {
+          this.imgLength = this.detailGoodsInfo.detailImage[0].list.length
+        }
       }
     }
   }

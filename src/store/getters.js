@@ -15,4 +15,11 @@ export default  {
   //     return state.students.filter(s => s.age > age)
   //   }
   // }
+
+  cartListLength(state){
+    return state.cartList.length
+  },
+  cartList(state){
+    return state.cartList
+  }
 }

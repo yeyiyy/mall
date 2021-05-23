@@ -16,7 +16,7 @@
     </div>
 
     <div class="bottom_right">
-      <div class="cart">
+      <div class="cart" @click="addToCart">
         加入购物车
       </div>
       <div class="buy">
@@ -35,11 +35,11 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$emit("addEvent");
+      this.$emit("addToCart");
     },
     collectClick(){
       this.isCollected = !this.isCollected
-    }
+    },
   },
 
 };

@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const Home = () => import('views/home/Home.vue')
 const Category = () => import('views/category/Category.vue')
-const Shopcart = () => import('views/shopcart/Shopcart.vue')
+const ShopCart = () => import('views/shopcart/ShopCart.vue')
 const Profile = () => import('views/profile/Profile.vue')
 const Detail = () => import('views/detail/Detail.vue')
 
@@ -32,7 +32,7 @@ const routes = [
 
   {
     path: '/shopcart',
-    component: Shopcart
+    component: ShopCart
   },
 
   {

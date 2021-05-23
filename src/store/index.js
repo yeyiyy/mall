@@ -8,7 +8,7 @@ import moduleA from './modules/moduleA';
 Vue.use(Vuex);
 
 const state = {
-  imgLoadEnd: false
+  cartList:[]
 }
 
 const store = new Vuex.Store({
