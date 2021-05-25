@@ -5,6 +5,12 @@ import store from './store/index';
 import toast from './components/common/toast';
 import VueLazyLoad from 'vue-lazyload';
 
+import { Icon } from 'vant';
+import { Image as VanImage } from 'vant';
+
+Vue.use(Icon)
+Vue.use(VanImage)
+
 Vue.use(toast)
 Vue.use(VueLazyLoad)
 
